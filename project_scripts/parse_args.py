@@ -1,6 +1,7 @@
 import argparse
 
-# Create an ArgumentParser that will evaluate arguments passed to main.py.
+# Create an ArgumentParser that will evaluate arguments passed to
+# main.py.
 parser: argparse.ArgumentParser = argparse.ArgumentParser(
     prog = "line_formatter.py",
     description = (
@@ -33,7 +34,8 @@ parser.add_argument(
     metavar = ''
     )
 
-# Add an optional argument that preview's the program's output in the terminal.
+# Add an optional argument that preview's the program's output in the
+# terminal.
 parser.add_argument(
     "-p",
     "--preview",

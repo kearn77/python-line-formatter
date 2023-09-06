@@ -44,8 +44,9 @@ class LinkedList:
         """
         Evaluate nodes recursively.
         """
-
-        # The method's base case.  
+        
+        # The method's base case.  Change not current_node.next to is
+        # None.
         if (len(current_node.line) < current_node.length and 
                 not current_node.next):
             
@@ -53,7 +54,8 @@ class LinkedList:
         
         # The method's recursive cases.
 
-        # Evaluate nodes ending in newlines with next values.
+        # Evaluate non-whitespace lines ending in newlines with next
+        # values.
         if all([
                 current_node.next,
                 current_node.line != '\n',
@@ -67,13 +69,14 @@ class LinkedList:
             current_node = current_node.next
             self.eval_recursive(current_node)
         
-        # Evaluate nodes with next values.
+        # Evaluate nodes with next values, including newline only
+        # lines.
         elif current_node.next:
             current_node.eval_node()
             current_node = current_node.next
             self.eval_recursive(current_node)
 
-        # Evalutes nodes without a next value.
+        # Evalute nodes without a next value.
         else:
             current_node.next = Node("")
             current_node.eval_node()

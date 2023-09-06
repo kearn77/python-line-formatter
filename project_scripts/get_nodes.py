@@ -1,9 +1,8 @@
 # Local imports.
 import linked_list as ll
 
-# Create a list of tuples that signifies whether 
-# any given line - n - has a line that follows 
-# it - n + 1.
+# Create a list of tuples that signifies whether any given line - n -
+# has a line that follows it - n + 1.
 def model_lines(src: list[str]) -> list[tuple]:
     index_list = []
     for index, _ in enumerate(src):
@@ -14,8 +13,7 @@ def model_lines(src: list[str]) -> list[tuple]:
     
     return index_list
 
-# Use the return value of model_lines to 
-# instantiate text file nodes.
+# Use the return value of model_lines to instantiate text file nodes.
 def create_nodes(index_list: list[tuple], src: list[str]) -> dict:
     node_dict: dict = {}
     for a,b in index_list:

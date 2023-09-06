@@ -1,12 +1,12 @@
-# Get key attributes of a line of text.
-# Think about possible alternatives to '_'.
+# Get word lengths for words in a line of text.  The pattern that 
+# precedes the first join - " $&#" - ensures that whitespace following 
+# the end of a sentence is not stripped.
 def get_attrs(ln: str) -> list[tuple]:
     words = " $&#".join(ln.split(" ")).split("$&#")
     return list(zip(words, [len(word) for word in words]))
 
-# Find the index that corresponds to a line 
-# split at an arbitrary length.  Splits at 
-# the beginning of a string.
+# Find the index that corresponds to a line split at an arbitrary
+# length.  Splits at the beginning of a string.
 def split_at(ln: list[tuple], length: int) -> int:
     lnLength = 0
     for index, value in  enumerate(ln):
@@ -17,10 +17,8 @@ def split_at(ln: list[tuple], length: int) -> int:
         elif index+1 == len(ln):
             return index 
     
-# Returns a string split at an arbitrary length.
-# Defaults to eighty, the line length recommended
-# for code in PEP8.
-
+# Returns a string split at an arbitrary length.  Defaults to eighty,
+# the line length recommended for code in PEP8.
 def keep_line(ln: str, length: int = 80) -> str:
     if len(ln) <= length and ln != '\n':
         return ln.rstrip()
@@ -32,8 +30,8 @@ def keep_line(ln: str, length: int = 80) -> str:
     keep = current_line[:split_at(word_tuples,length)]
     return ''.join(keep).rstrip()
 
-# Returns the leftover portion of a string split
-# at an arbitrary line length.
+# Returns the leftover portion of a string split at an arbitrary line
+# length.
 def send_line(ln: str, length: int = 80) -> str:
     if len(ln) <= length:
         return ''

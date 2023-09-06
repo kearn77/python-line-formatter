@@ -20,7 +20,7 @@ contents are merged into a string, which is returned to the user.<br/>
 
 ## Table of Contents<br/>
 
-format_fns.py<br/>
+### format_fns.py<br/>
 
 This module contains four functions: get_attrs, split_at, keep_line,<br/>
 and send_line.  Collectively, they are used to create the nodes that<br/>
@@ -28,7 +28,7 @@ compose a linked list.  The eval_node method - a member function of the<br/>
 Node class - calls this group of functions to format a node’s line<br/>
 value.<br/>
 
-linked_list.py<br/>
+### linked_list.py<br/>
 
 A linked list is a memory efficient data structure that is well suited<br/>
 for insert and delete operations. It is composed of nodes, objects that<br/>
@@ -56,7 +56,7 @@ Taking a linked list as an argument, the former uses recursion to<br/>
 create new nodes to accommodate the changing structure of the input.<br/>
 The latter merges the list’s line values into a single string.<br/>
 
-get_nodes.py<br/>
+### get_nodes.py<br/>
 
 The get_nodes module contains two functions that create the initial<br/>
 linked list passed to eval_recursive.   Model lines, a helper function,<br/>
@@ -65,18 +65,18 @@ followed by a non-empty line.  create_nodes takes this list as an<br/>
 argument and returns a dictionary of node values, where the head node<br/>
 is accessed by the key 0.<br/>
 
-parse_args.py<br/>
+### parse_args.py<br/>
 
 Utilizing python’s argparse library, parse_args.py instantiates an<br/>
 ArgumentParser object named ‘parser,’  which creates the command<br/>
 line interface the user interacts with to run the program.<br/>
 
-exceptions.py<br/>
+### exceptions.py<br/>
 
 Raises an error if the file passed to the command line interface does<br/>
 not end in ‘.txt’.<br/>
 
-line_formatter.py<br/>
+### line_formatter.py<br/>
 
 This module serves as the entry point to the command line application.<br/>
 It contains four functions - add_breaks, add_headers, preview, and<br/>
