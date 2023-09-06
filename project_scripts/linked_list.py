@@ -45,8 +45,7 @@ class LinkedList:
         Evaluate nodes recursively.
         """
         
-        # The method's base case.  Change not current_node.next to is
-        # None.
+        # The method's base case.
         if (len(current_node.line) < current_node.length and 
                 not current_node.next):
             
